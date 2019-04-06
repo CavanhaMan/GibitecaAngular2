@@ -7,9 +7,9 @@ package com.biblioteca.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.biblioteca.model.Livro;
+import com.biblioteca.model.Gibi;
 
 @Repository
-public interface LivroRepository extends JpaRepository<Livro,Integer>{
+public interface GibiRepository extends JpaRepository<Gibi,Integer>{
 	
 }

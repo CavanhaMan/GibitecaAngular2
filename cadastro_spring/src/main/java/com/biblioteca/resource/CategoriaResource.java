@@ -43,8 +43,7 @@ public class CategoriaResource {
 	@PostMapping
 	public ResponseEntity<?> salvar(@Valid @RequestBody Categoria categoria) {
 		repository.save(categoria);
-		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
-				.buildAndExpand(categoria.getIdCategoria()).toUri();
+		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(categoria.getIdCategoria()).toUri();
 		return ResponseEntity.created(location).build();
 	}
 
@@ -59,9 +58,7 @@ public class CategoriaResource {
 		try {
 			repository.deleteById(codigo);
 			return ResponseEntity.ok(codigo);
-		} catch (EmptyResultDataAccessException e) {
-			return ResponseEntity.notFound().build();
-		}
+		} catch (EmptyResultDataAccessException e) {return ResponseEntity.notFound().build();}
 	}
 
 }

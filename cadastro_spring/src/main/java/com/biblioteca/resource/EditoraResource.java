@@ -43,8 +43,7 @@ public class EditoraResource {
 	@PostMapping
 	public ResponseEntity<?> salvar(@Valid @RequestBody Editora editora) {
 		repository.save(editora);
-		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
-				.buildAndExpand(editora.getIdEditora()).toUri();
+		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(editora.getCodigo()).toUri();
 		return ResponseEntity.created(location).build();
 	}
 
@@ -59,9 +58,7 @@ public class EditoraResource {
 		try {
 			repository.deleteById(codigo);
 			return ResponseEntity.ok(codigo);
-		} catch (EmptyResultDataAccessException e) {
-			return ResponseEntity.notFound().build();
-		}
+		} catch (EmptyResultDataAccessException e) {return ResponseEntity.notFound().build();}
 	}
 
 }

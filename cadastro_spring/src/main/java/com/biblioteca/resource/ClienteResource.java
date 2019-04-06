@@ -43,8 +43,7 @@ public class ClienteResource {
 	@PostMapping
 	public ResponseEntity<?> salvar(@Valid @RequestBody Cliente cliente) {
 		service.save(cliente);
-		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
-				.buildAndExpand(cliente.getCodigo()).toUri();
+		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(cliente.getCodigo()).toUri();
 		return ResponseEntity.created(location).build();
 	}
 
@@ -59,9 +58,7 @@ public class ClienteResource {
 		try {
 			service.deleteById(codigo);
 			return ResponseEntity.ok(codigo);
-		} catch (EmptyResultDataAccessException e) {
-			return ResponseEntity.notFound().build();
-		}
+		} catch (EmptyResultDataAccessException e) {return ResponseEntity.notFound().build();}
 	}
 
 }

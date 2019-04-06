@@ -31,39 +31,27 @@ public class Categoria implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int idCategoria;
-	public int getIdCategoria() {
-		return idCategoria;
-	}
-
-	public void setIdCategoria(int idCategoria) {
-		this.idCategoria = idCategoria;
-	}
-
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-
-	public List<Livro> getLivros() {
-		return livros;
-	}
-
-	public void setLivros(List<Livro> livros) {
-		this.livros = livros;
-	}
-
+	private Integer codigo;
+	private String nome;
 	private String descricao;
+
+	public Integer getCodigo() {return codigo;}
+	public void setCodigo(Integer codigo) {this.codigo = codigo;}
+	public String getNome() {return nome;}
+	public void setNome(String nome) {this.nome = nome;}
+	
+	private int idCategoria;
+	public int getIdCategoria() {return idCategoria;}
+	public void setIdCategoria(int idCategoria) {this.idCategoria = idCategoria;}
+	public String getDescricao() {return descricao;}
+	public void setDescricao(String descricao) {this.descricao = descricao;}
+	public List<Gibi> getGibis() {return gibis;}
+	public void setGibis(List<Gibi> gibis) {this.gibis = gibis;}
 	
 	@JsonIgnore
 	@OneToMany(mappedBy="categoria")
-	private List<Livro> livros = new ArrayList<>();
+	private List<Gibi> gibis = new ArrayList<>();
 
-	public Categoria(String descricao) {
-		this.descricao = descricao;
-	}
+	public Categoria(String descricao) {this.descricao = descricao;}
 
 }

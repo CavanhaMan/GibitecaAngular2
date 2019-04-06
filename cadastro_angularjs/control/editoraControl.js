@@ -3,7 +3,7 @@ var app = angular.module('todoApp', [])
   
   var url = 'http://localhost:9000/editoras';
   
-  $scope.nomeTela = "Cadastro de Conteúdo";
+  $scope.nomeTela = "Cadastro de Editoras";
 
   $scope.pesquisar = function() {
     $http.get(url).then(function (response) {
@@ -53,13 +53,9 @@ $scope.excluir = function() {
     }
 }
 
-$scope.novo = function() {
-  $scope.editora = {};
-}        
+$scope.novo = function() {$scope.editora = {};}        
 
-$scope.seleciona = function(editora) {
-  $scope.editora = editora;
-}
+$scope.seleciona = function(editora) {$scope.editora = editora;}
 
 $scope.pesquisar();
    $scope.novo();

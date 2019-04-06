@@ -1,15 +1,15 @@
 var app = angular.module('todoApp', [])
-.controller('LivroController', function($scope,$http) {
+.controller('GibiController', function($scope,$http) {
   
-  var url = 'http://localhost:9000/livros';
+  var url = 'http://localhost:9000/gibis';
   var urlEditoras = 'http://localhost:9000/editoras';
   var urlCategorias = 'http://localhost:9000/categorias';
   
-  $scope.nomeTela = "Cadastro de Livro";
+  $scope.nomeTela = "Cadastro de Gibi";
 
   $scope.pesquisar = function() {
     $http.get(url).then(function (response) {
-        $scope.livros = response.data;
+        $scope.gibis = response.data;
     }, function (error) {
         alert(error);
         console.log(error);
@@ -17,12 +17,12 @@ var app = angular.module('todoApp', [])
 }
 
 $scope.salvar = function() {
-    if (typeof $scope.livro.codigo == 'undefined') {
-        if(typeof $scope.livro.isbn == 'undefined'){
-            alert('Digite o codigo do livro');
+    if (typeof $scope.gibi.codigo == 'undefined') {
+        if(typeof $scope.gibi.isbn == 'undefined'){
+            alert('Digite o codigo do gibi');
         }else{
-            $http.post(url,$scope.livro).then(function (response) {
-                $scope.livros.push(response.data);
+            $http.post(url,$scope.gibi).then(function (response) {
+                $scope.gibis.push(response.data);
                 $scope.novo();
             }, function (error) {
                 alert(error);
@@ -30,7 +30,7 @@ $scope.salvar = function() {
             });
         }
     } else {
-        $http.put(url,$scope.livro).then(function () {
+        $http.put(url,$scope.gibi).then(function () {
             $scope.pesquisar();
             $scope.novo();
         }, function (error) {
@@ -41,10 +41,10 @@ $scope.salvar = function() {
 }
 
 $scope.excluir = function() {
-    if (typeof $scope.livro.codigo == 'undefined') {
-        alert('Escolha um codigo de livro');
+    if (typeof $scope.gibi.codigo == 'undefined') {
+        alert('Escolha um codigo de gibi');
     } else {
-        urlExcluir = url+"/"+$scope.livro.codigo;
+        urlExcluir = url+"/"+$scope.gibi.codigo;
         $http.delete(urlExcluir).then(function () {
             $scope.pesquisar();
             $scope.novo();
@@ -56,11 +56,11 @@ $scope.excluir = function() {
 }
 
 $scope.novo = function() {
-  $scope.livro = {};
+  $scope.gibi = {};
 }        
 
-$scope.seleciona = function(livro) {
-  $scope.livro = livro;
+$scope.seleciona = function(gibi) {
+  $scope.gibi = gibi;
 }
 
 $scope.pesquisar();

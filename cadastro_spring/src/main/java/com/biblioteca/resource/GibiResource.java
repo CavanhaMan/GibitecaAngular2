@@ -23,29 +23,28 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.biblioteca.model.Livro;
-import com.biblioteca.repository.LivroRepository;
+import com.biblioteca.model.Gibi;
+import com.biblioteca.repository.GibiRepository;
 
 @RestController
-@RequestMapping(value = "/livros")
+@RequestMapping(value = "/gibis")
 @CrossOrigin(origins = "http://localhost")
-public class LivroResource {
+public class GibiResource {
 
 	@Autowired
-	private LivroRepository repository;
+	private GibiRepository repository;
 
 	@PostMapping
-	public ResponseEntity<?> salvar(@Valid @RequestBody Livro livro) {
+	public ResponseEntity<?> salvar(@Valid @RequestBody Gibi livro) {
 		livro.getCategoria().setIdCategoria(livro.getCategoria().getIdCategoria());
-		livro.getEditora().setIdEditora(livro.getEditora().getIdEditora());
+		livro.getEditora().setCodigo(livro.getEditora().getCodigo());
 		repository.save(livro);
-		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(livro.getIsbn())
-				.toUri();
+		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(livro.getIsbn()).toUri();
 		return ResponseEntity.created(location).build();
 	}
 
 	@PutMapping
-	public ResponseEntity<?> atualizar(@Valid @RequestBody Livro livro) {
+	public ResponseEntity<?> atualizar(@Valid @RequestBody Gibi livro) {
 		repository.save(livro);
 		return ResponseEntity.noContent().build();
 	}
@@ -61,9 +60,9 @@ public class LivroResource {
 	}
 
 	@GetMapping
-	public ResponseEntity<List<Livro>> findAll() {
-		List<Livro> livros = repository.findAll();
-		return ResponseEntity.ok().body(livros);
+	public ResponseEntity<List<Gibi>> findAll() {
+		List<Gibi> gibis = repository.findAll();
+		return ResponseEntity.ok().body(gibis);
 	}
 
 }

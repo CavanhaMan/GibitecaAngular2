@@ -21,14 +21,13 @@ import lombok.NoArgsConstructor;
 @Data
 @Builder
 @NoArgsConstructor
-public class Livro implements Serializable {
+public class Gibi implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer codigo;
-
 	private String isbn;
 	private String titulo;
 	private String autor;
@@ -41,55 +40,20 @@ public class Livro implements Serializable {
 	@JoinColumn(name = "editora_id")
 	private Editora editora;
 
-	public Integer getCodigo() {
-		return codigo;
-	}
-
-	public void setCodigo(Integer codigo) {
-		this.codigo = codigo;
-	}
-
-	public String getIsbn() {
-		return isbn;
-	}
-
-	public void setIsbn(String isbn) {
-		this.isbn = isbn;
-	}
-
-	public String getTitulo() {
-		return titulo;
-	}
-
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
-	}
-
-	public String getAutor() {
-		return autor;
-	}
-
-	public void setAutor(String autor) {
-		this.autor = autor;
-	}
-
-	public Categoria getCategoria() {
-		return categoria;
-	}
-
-	public void setCategoria(Categoria categoria) {
-		this.categoria = categoria;
-	}
-
-	public Editora getEditora() {
-		return editora;
-	}
-
-	public void setEditora(Editora editora) {
-		this.editora = editora;
-	}
-
-	public Livro(Integer codigo, String isbn, String titulo, String autor, Categoria categoria, Editora editora) {
+	public Integer getCodigo() {return codigo;}
+	public void setCodigo(Integer codigo) {this.codigo = codigo;}
+	public String getIsbn() {return isbn;}
+	public void setIsbn(String isbn) {this.isbn = isbn;}
+	public String getTitulo() {return titulo;}
+	public void setTitulo(String titulo) {this.titulo = titulo;}
+	public String getAutor() {return autor;}
+	public void setAutor(String autor) {this.autor = autor;}
+	public Categoria getCategoria() {return categoria;}
+	public void setCategoria(Categoria categoria) {this.categoria = categoria;}
+	public Editora getEditora() {return editora;}
+	public void setEditora(Editora editora) {this.editora = editora;}
+	
+	public Gibi(Integer codigo, String isbn, String titulo, String autor, Categoria categoria, Editora editora) {
 		super();
 		this.codigo = codigo;
 		this.isbn = isbn;

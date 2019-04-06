@@ -11,16 +11,14 @@
     <!-- Bootstrap CSS -->
 	  <link rel="stylesheet" type="text/css" href="dist\css\bootstrap.css">
     <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="dist\css\Gibiteca.css">
     <link rel="stylesheet" type="text/css" href="dist\css\jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="dist\css\tooltipui.css">
-    <link rel="stylesheet" type="text/css" href="dist\css\help.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/navbars/">
     <script src="dist/js/angular.min.js"></script>
-    <script src="control/clienteControl.js"></script>
+    <script src="control/categoriaControl.js"></script>
   </head>
-  <body ng-controller="ClienteController">
+  <body ng-controller="CategoriaController">
       <div ng-include="'menu.html'"></div>
 
   <div class="container"> 
@@ -46,55 +44,22 @@
           <div class="form-row">
             <div class="form-group col-md-2">
               <label for="inputCodigo">Codigo</label>
-              <input type="text" class="form-control" id="inputCodigo" disabled ng-model="cliente.codigo">
+              <input type="text" class="form-control" id="inputCodigo" disabled ng-model="categoria.codigo">
             </div>
             <div class="form-group col-md-6">
               <label for="inputNome">Nome</label>
-              <input type="text" class="form-control is-valid" id="inputNome" required ng-model="cliente.nome">
+              <input type="text" class="form-control is-valid" id="inputNome" required ng-model="categoria.nome">
               <div class="invalid-feedback">Digite o nome.</div>
-            </div>
-            <div class="form-group col-md-4">
-              <label for="inputCargo">Área de Formação</label>
-              <input type="text" class="form-control is-valid" id="inputCargo"  required ng-model="cliente.cargo">
-              <div class="invalid-feedback">Digite a área de formação. </div>
             </div>
           </div>
           <!-- -->
           <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="inputEndereco">Endereço</label>
-              <input type="text" class="form-control is-valid" id="inputEndereco" required ng-model="cliente.endereco">
-              <div class="invalid-feedback">Digite o endereço. </div>
+            <div class="form-group col-md-8">
+              <label for="inputDescricao">Descrição</label>
+              <input type="text" class="form-control is-valid" id="inputDescricao"  required ng-model="categoria.descricao">
+              <div class="invalid-feedback">Digite a descrição. </div>
             </div>
-            <div class="form-group col-md-4">
-              <label for="inputCidade">Cidade</label>
-              <input type="text" class="form-control is-valid" id="inputCidade" required ng-model="cliente.cidade">
-              <div class="invalid-feedback">Digite o cidade. </div>
-            </div>
-            <div class="form-group col-md-2">
-              <label for="inputCep">Cep</label>
-              <input type="text" class="form-control is-valid" id="inputCep" required ng-model="cliente.cep">
-              <div class="invalid-feedback">Digite o cep. </div>
-            </div>
-          </div>                
-          <!-- -->
-          <div class="form-row">
-            <div class="form-group col-md-4">
-              <label for="inputPais">Pais</label>
-              <input type="text" class="form-control is-valid" id="inputPais" required ng-model="cliente.pais">
-              <div class="invalid-feedback">Digite o pais. </div>
-            </div>
-            <div class="form-group col-md-4">
-              <label for="inputTelefone">Telefone</label>
-              <input type="text" class="form-control is-valid" id="inputTelefone" required ng-model="cliente.telefone">
-              <div class="invalid-feedback">Digite o telefone. </div>
-            </div>
-            <div class="form-group col-md-4">
-              <label for="inputFax">E-mail</label>
-              <input type="text" class="form-control is-valid" id="inputFax" required ng-model="cliente.fax">
-              <div class="invalid-feedback">Digite o E-mail. </div>
-            </div>
-          </div> 
+          </div>
         </form>
       </div>
       <div class="table table-hover fade" id="dados" role="tabpanel" aria-labelledby="dados-tab">
@@ -104,26 +69,14 @@
             <tr>
               <th scope="col">Codigo</th>
               <th scope="col">Nome</th>
-              <th scope="col">Formacao</th>
-              <th scope="col">Endereco</th>
-              <th scope="col">Cidade</th>
-              <th scope="col">Cep</th>
-              <th scope="col">Pais</th>
-              <th scope="col">Telefone</th>
-              <th scope="col">Email</th>
+              <th scope="col">Descrição</th>
             </tr>
           </thead>
           <tbody>
             <tr ng-repeat="clientesTabela in clientes" ng-click="seleciona(clientesTabela)">
-              <th scope="row">{{ clientesTabela.codigo }}</th>
-              <td>{{ clientesTabela.nome }}</td>
-              <td>{{ clientesTabela.cargo }}</td>
-              <td>{{ clientesTabela.endereco }}</td>
-              <td>{{ clientesTabela.cidade }}</td>
-              <td>{{ clientesTabela.cep }}</td>
-              <td>{{ clientesTabela.pais }}</td>
-              <td>{{ clientesTabela.telefone }}</td>
-              <td>{{ clientesTabela.fax }}</td>
+              <th scope="row">{{ categoriasTabela.codigo }}</th>
+              <td>{{ categoriasTabela.nome }}</td>
+              <td>{{ categoriasTabela.descricao }}</td>
             </tr>
           </tbody>
         </table>

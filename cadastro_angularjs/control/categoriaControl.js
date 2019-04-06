@@ -3,7 +3,7 @@ var app = angular.module('todoApp', [])
   
   var url = 'http://localhost:9000/categorias';
   
-  $scope.nomeTela = "Cadastro de Disciplinas";
+  $scope.nomeTela = "Cadastro de Categorias";
 
   $scope.pesquisar = function() {
     $http.get(url).then(function (response) {
@@ -17,7 +17,7 @@ var app = angular.module('todoApp', [])
 $scope.salvar = function() {
     if (typeof $scope.categoria.idCategoria == 'undefined') {
         if(typeof $scope.categoria.descricao == 'undefined'){
-            alert('Digite uma descrição');
+            alert('Digite uma categoria');
         }else{
             $http.post(url,$scope.categoria).then(function (response) {
                 $scope.categorias.push(response.data);
@@ -40,7 +40,7 @@ $scope.salvar = function() {
 
 $scope.excluir = function() {
     if (typeof $scope.categoria.idCategoria == 'undefined') {
-        alert('Escolha uma Disciplina');
+        alert('Escolha uma categoria');
     } else {
         urlExcluir = url+"/"+$scope.categoria.idCategoria;
         $http.delete(urlExcluir).then(function () {
@@ -53,13 +53,9 @@ $scope.excluir = function() {
     }
 }
 
-$scope.novo = function() {
-  $scope.categoria = {};
-}        
+$scope.novo = function() {$scope.categoria = {};}        
 
-$scope.seleciona = function(categoria) {
-  $scope.categoria = categoria;
-}
+$scope.seleciona = function(categoria) {$scope.categoria = categoria;}
 
 $scope.pesquisar();
    $scope.novo();
