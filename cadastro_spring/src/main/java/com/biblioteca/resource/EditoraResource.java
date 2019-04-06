@@ -1,5 +1,9 @@
 package com.biblioteca.resource;
-
+/**********************
+* Rodrigo  CavanhaMan *
+*         IFTM        *
+* Gibiteca do Cavanha *
+***********************/
 import java.net.URI;
 import java.util.List;
 

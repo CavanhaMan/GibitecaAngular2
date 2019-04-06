@@ -1,5 +1,9 @@
 package com.biblioteca.model;
-
+/**********************
+* Rodrigo  CavanhaMan *
+*         IFTM        *
+* Gibiteca do Cavanha *
+***********************/
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;

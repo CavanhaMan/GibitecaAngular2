@@ -1,5 +1,9 @@
 package com.biblioteca.model;
-
+/**********************
+* Rodrigo  CavanhaMan *
+*         IFTM        *
+* Gibiteca do Cavanha *
+***********************/
 import java.io.Serializable;
 
 import javax.persistence.Entity;
