@@ -34,24 +34,26 @@ public class Categoria implements Serializable {
 	private Integer codigo;
 	private String nome;
 	private String descricao;
-
-	public Integer getCodigo() {return codigo;}
-	public void setCodigo(Integer codigo) {this.codigo = codigo;}
-	public String getNome() {return nome;}
-	public void setNome(String nome) {this.nome = nome;}
-	
-	private int idCategoria;
-	public int getIdCategoria() {return idCategoria;}
-	public void setIdCategoria(int idCategoria) {this.idCategoria = idCategoria;}
-	public String getDescricao() {return descricao;}
-	public void setDescricao(String descricao) {this.descricao = descricao;}
-	public List<Gibi> getGibis() {return gibis;}
-	public void setGibis(List<Gibi> gibis) {this.gibis = gibis;}
 	
 	@JsonIgnore
 	@OneToMany(mappedBy="categoria")
 	private List<Gibi> gibis = new ArrayList<>();
 
-	public Categoria(String descricao) {this.descricao = descricao;}
-
+	public Integer getCodigo() {return codigo;}
+	public void setCodigo(Integer codigo) {this.codigo = codigo;}
+	public String getNome() {return nome;}
+	public void setNome(String nome) {this.nome = nome;}
+	public String getDescricao() {return descricao;}
+	public void setDescricao(String descricao) {this.descricao = descricao;}
+	
+	public List<Gibi> getGibis() {return gibis;}
+	public void setGibis(List<Gibi> gibis) {this.gibis = gibis;}
+	
+	public Categoria(Integer codigo, String nome, String descricao, List<Gibi> gibis) {
+		super();
+		this.codigo = codigo;
+		this.nome = nome;
+		this.descricao = descricao;
+		this.gibis = gibis;
+	}
 }

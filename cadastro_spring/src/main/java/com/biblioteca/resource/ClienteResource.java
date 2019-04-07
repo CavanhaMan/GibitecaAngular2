@@ -36,8 +36,8 @@ public class ClienteResource {
 
 	@GetMapping
 	public ResponseEntity<List<Cliente>> findAll() {
-		List<Cliente> alunos = service.findAll();
-		return ResponseEntity.ok().body(alunos);
+		List<Cliente> clientes = service.findAll();
+		return ResponseEntity.ok().body(clientes);
 	}
 
 	@PostMapping

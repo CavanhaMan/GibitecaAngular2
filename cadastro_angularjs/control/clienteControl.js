@@ -22,19 +22,13 @@ $scope.salvar = function() {
             $http.post(url,$scope.cliente).then(function (response) {
                 $scope.clientes.push(response.data);
                 $scope.novo();
-            }, function (error) {
-                alert(error);
-                console.log(error);
-            });
+            }, function (error) {alert(error);console.log(error);});
         }         
     } else {
         $http.put(url,$scope.cliente).then(function () {
             $scope.pesquisar();
             $scope.novo();
-        }, function (error) {
-            alert(error);
-            console.log(error);
-        });
+        }, function (error) {alert(error);console.log(error);});
     } 
 }
 
@@ -46,17 +40,12 @@ $scope.excluir = function() {
         $http.delete(urlExcluir).then(function () {
             $scope.pesquisar();
             $scope.novo();
-        }, function (error) {
-            alert(error);
-            console.log(error);
-        }); 
+        }, function (error) {alert(error);console.log(error);}); 
     }
 }
 
 $scope.novo = function() {$scope.cliente = {};}        
-
 $scope.seleciona = function(cliente) {$scope.cliente = cliente;}
-
 $scope.pesquisar();
 $scope.novo();
 

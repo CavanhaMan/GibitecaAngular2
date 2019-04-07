@@ -32,31 +32,31 @@ import com.biblioteca.repository.CategoriaRepository;
 public class CategoriaResource {
 
 	@Autowired
-	private CategoriaRepository repository;
+	private CategoriaRepository service;
 
 	@GetMapping
 	public ResponseEntity<List<Categoria>> findAll() {
-		List<Categoria> categorias = repository.findAll();
+		List<Categoria> categorias = service.findAll();
 		return ResponseEntity.ok().body(categorias);
 	}
 
 	@PostMapping
 	public ResponseEntity<?> salvar(@Valid @RequestBody Categoria categoria) {
-		repository.save(categoria);
-		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(categoria.getIdCategoria()).toUri();
+		service.save(categoria);
+		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(categoria.getCodigo()).toUri();
 		return ResponseEntity.created(location).build();
 	}
 
 	@PutMapping
 	public ResponseEntity<?> atualizar(@Valid @RequestBody Categoria categoria) {
-		repository.save(categoria);
+		service.save(categoria);
 		return ResponseEntity.noContent().build();
 	}
 
 	@DeleteMapping(value = "{codigo}")
 	public ResponseEntity<?> excluir(@PathVariable Integer codigo) {
 		try {
-			repository.deleteById(codigo);
+			service.deleteById(codigo);
 			return ResponseEntity.ok(codigo);
 		} catch (EmptyResultDataAccessException e) {return ResponseEntity.notFound().build();}
 	}

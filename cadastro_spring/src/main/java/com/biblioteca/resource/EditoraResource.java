@@ -32,31 +32,31 @@ import com.biblioteca.repository.EditoraRepository;
 public class EditoraResource {
 
 	@Autowired
-	private EditoraRepository repository;
+	private EditoraRepository service;
 
 	@GetMapping
 	public ResponseEntity<List<Editora>> findAll() {
-		List<Editora> editoras = repository.findAll();
+		List<Editora> editoras = service.findAll();
 		return ResponseEntity.ok().body(editoras);
 	}
 
 	@PostMapping
 	public ResponseEntity<?> salvar(@Valid @RequestBody Editora editora) {
-		repository.save(editora);
+		service.save(editora);
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(editora.getCodigo()).toUri();
 		return ResponseEntity.created(location).build();
 	}
 
 	@PutMapping
 	public ResponseEntity<?> atualizar(@Valid @RequestBody Editora editora) {
-		repository.save(editora);
+		service.save(editora);
 		return ResponseEntity.noContent().build();
 	}
 
 	@DeleteMapping(value = "{codigo}")
 	public ResponseEntity<?> excluir(@PathVariable Integer codigo) {
 		try {
-			repository.deleteById(codigo);
+			service.deleteById(codigo);
 			return ResponseEntity.ok(codigo);
 		} catch (EmptyResultDataAccessException e) {return ResponseEntity.notFound().build();}
 	}

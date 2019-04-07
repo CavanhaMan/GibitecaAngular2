@@ -32,37 +32,35 @@ import com.biblioteca.repository.GibiRepository;
 public class GibiResource {
 
 	@Autowired
-	private GibiRepository repository;
+	private GibiRepository service;
+
+	@GetMapping
+	public ResponseEntity<List<Gibi>> findAll() {
+		List<Gibi> gibis = service.findAll();
+		return ResponseEntity.ok().body(gibis);
+	}
 
 	@PostMapping
-	public ResponseEntity<?> salvar(@Valid @RequestBody Gibi livro) {
-		livro.getCategoria().setIdCategoria(livro.getCategoria().getIdCategoria());
-		livro.getEditora().setCodigo(livro.getEditora().getCodigo());
-		repository.save(livro);
-		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(livro.getIsbn()).toUri();
+	public ResponseEntity<?> salvar(@Valid @RequestBody Gibi gibi) {
+		gibi.getCategoria().setCodigo(gibi.getCategoria().getCodigo());
+		gibi.getEditora().setCodigo(gibi.getEditora().getCodigo());
+		service.save(gibi);
+		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(gibi.getCodigo()).toUri();
 		return ResponseEntity.created(location).build();
 	}
 
 	@PutMapping
-	public ResponseEntity<?> atualizar(@Valid @RequestBody Gibi livro) {
-		repository.save(livro);
+	public ResponseEntity<?> atualizar(@Valid @RequestBody Gibi gibi) {
+		service.save(gibi);
 		return ResponseEntity.noContent().build();
 	}
 
 	@DeleteMapping(value = "{codigo}")
 	public ResponseEntity<?> excluir(@PathVariable Integer codigo) {
 		try {
-			repository.deleteById(codigo);
+			service.deleteById(codigo);
 			return ResponseEntity.ok(codigo);
-		} catch (EmptyResultDataAccessException e) {
-			return ResponseEntity.notFound().build();
-		}
-	}
-
-	@GetMapping
-	public ResponseEntity<List<Gibi>> findAll() {
-		List<Gibi> gibis = repository.findAll();
-		return ResponseEntity.ok().body(gibis);
+		} catch (EmptyResultDataAccessException e) {return ResponseEntity.notFound().build();}
 	}
 
 }
