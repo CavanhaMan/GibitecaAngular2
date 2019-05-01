@@ -1,0 +1,4 @@
+ Arquivo angular-cli.json – representação do projeto – caminhos, arquivos e
+configurações
+- Arquivo karma.conf.js – configuração do Karma, biblioteca para testes
+unitários.
