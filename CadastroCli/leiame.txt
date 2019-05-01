@@ -1,4 +1,9 @@
- Arquivo angular-cli.json – representação do projeto – caminhos, arquivos e
-configurações
-- Arquivo karma.conf.js – configuração do Karma, biblioteca para testes
-unitários.
+ Arquivo angular-cli.json – representação do projeto – caminhos, arquivos e configurações
+- Arquivo karma.conf.js – configuração do Karma, biblioteca para testes unitários.
+- Arquivo package.json – dependências do projeto
+- Separado em 3 partes:
+	- Primeira parte: dados do projeto, como versão, nome, scripts e teste
+	- Dependencies: dependências do projeto para produção
+	- devDependencies: dependências do projeto para desenvolvimento. Arquivos de testes estarão neste diretório.
+- Arquivo protractor.conf.js – arquivo de configuração da biblioteca Protractor, feito para testes de integração do projeto.
+- Arquivo tslint.json – configurações para usar o comando ng lint, que são boas práticas do desenvolvimento em Angular
