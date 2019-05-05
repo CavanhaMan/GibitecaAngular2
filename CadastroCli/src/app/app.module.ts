@@ -1,5 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+/*--------------imports copiado do menu---------------*/
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule,
+         MatIconModule,
+         MatListModule,
+         MatSidenavModule,
+         MatToolbarModule
+} from '@angular/material';
+/*--------------fim dos imports copiado do menu---------------*/
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,7 +30,16 @@ import { EditoraComponent } from './editora/editora.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+/*--------------imports copiado do menu---------------*/
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatListModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatButtonModule,
+    FlexLayoutModule
+/*--------------fim dos imports copiado do menu---------------*/
   ],
   providers: [],
   bootstrap: [AppComponent]
