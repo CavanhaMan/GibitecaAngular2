@@ -8,7 +8,7 @@
         <span><img class="logo" src="assets/img/barbagb.png" alt="CavanhaMan" width="120"></span>
         <span class="example-spacer"></span>
         <div fxShow="true" fxHide.lt-md="true"><!-- Menu expandido -->
-          <a href="#" mat-button><mat-icon>import_contacts</mat-icon>Gibia</a>
+          <a routerLink="/" mat-button><mat-icon>import_contacts</mat-icon>Gibi</a>
           <a href="#" mat-button><mat-icon>store</mat-icon>Editora</a>
           <a href="#" mat-button><mat-icon>group_work</mat-icon>Categoria</a>
           <a href="#" mat-button><mat-icon>person</mat-icon>Cliente</a>
@@ -47,3 +47,6 @@
     </mat-sidenav-container>
   </div>
 <!--------------------------fim do código do menu-------------------------->
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
