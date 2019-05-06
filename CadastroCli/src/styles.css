@@ -9,3 +9,8 @@ h1{
     font-family: "Comic Sans MS";
 }
 .logo{margin-top: 5%;}
+mat-toolbar {
+    position: fixed;
+    z-index: 100;
+    width: 100%  !important;
+}
