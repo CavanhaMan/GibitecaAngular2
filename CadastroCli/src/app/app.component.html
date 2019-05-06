@@ -1,5 +1,5 @@
 <!--------------------------inicio do código do menu-------------------------->
-<div style="height: 30vh;">
+<div style="height: 100vh;">
     <mat-toolbar color="primary">
       <mat-toolbar-row>
         <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
@@ -31,9 +31,11 @@
         </mat-nav-list>
       </mat-sidenav>
       <mat-sidenav-content fxFlexFill>
-      </mat-sidenav-content>???<BR>???<BR>????</mat-sidenav-container>
+          <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
   </div>
 <!--------------------------fim do código do menu-------------------------->
 <div class="container">
-    <router-outlet></router-outlet>
+    
 </div>
