@@ -8,10 +8,10 @@
         <span><img class="logo" src="assets/img/barbagb.png" alt="CavanhaMan" width="120"></span>
         <span class="example-spacer"></span>
         <div fxShow="true" fxHide.lt-md="true"><!-- Menu expandido -->
-          <a routerLink="/" mat-button><mat-icon>import_contacts</mat-icon>Gibi</a>
-          <a href="#" mat-button><mat-icon>store</mat-icon>Editora</a>
-          <a href="#" mat-button><mat-icon>group_work</mat-icon>Categoria</a>
-          <a href="#" mat-button><mat-icon>person</mat-icon>Cliente</a>
+          <a routerLink="/gibi" mat-button><mat-icon>import_contacts</mat-icon>Gibi</a>
+          <a href="/editora" mat-button><mat-icon>store</mat-icon>Editora</a>
+          <a href="/categoria" mat-button><mat-icon>group_work</mat-icon>Categoria</a>
+          <a href="/cliente" mat-button><mat-icon>person</mat-icon>Cliente</a>
         </div>
       </mat-toolbar-row>
     </mat-toolbar>
@@ -22,8 +22,8 @@
     <mat-sidenav-container fxFlexFill>
       <mat-sidenav #sidenav>
         <mat-nav-list><!-- Menu compacto para responsividade -->
-          <a href="#" mat-list-item><mat-icon>import_contacts</mat-icon>Gibi</a>
-          <a href="#" mat-list-item><mat-icon>store</mat-icon>Editora</a>
+          <a href="/gibi" mat-list-item><mat-icon>import_contacts</mat-icon>Gibi</a>
+          <a href="/editora" mat-list-item><mat-icon>store</mat-icon>Editora</a>
           <a href="#" mat-list-item><mat-icon>group_work</mat-icon>Categoria</a>
           <a href="#" mat-list-item><mat-icon>person</mat-icon>Cliente</a>
           <hr>

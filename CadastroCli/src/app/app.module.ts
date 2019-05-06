@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { Routing } from './app-router';
+import { routesapp } from './app-router';
 /*--------------imports copiado do menu---------------*/
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,6 +20,8 @@ import { CategoriaComponent } from './categoria/categoria.component';
 import { ClienteComponent } from './cliente/cliente.component';
 import { EditoraComponent } from './editora/editora.component';
 import { HomeComponent } from './home/home.component';
+import { RouterModule } from '@angular/router';
+import { DECLARATION_VIEW } from '@angular/core/src/render3/interfaces/view';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,6 @@ import { HomeComponent } from './home/home.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    Routing,
 /*--------------imports copiado do menu---------------*/
     BrowserAnimationsModule,
     MatIconModule,
@@ -42,9 +43,10 @@ import { HomeComponent } from './home/home.component';
     MatToolbarModule,
     MatSidenavModule,
     MatButtonModule,
-    FlexLayoutModule
+    FlexLayoutModule,
 /*--------------fim dos imports copiado do menu---------------*/
-  ],
+    RouterModule.forRoot(routesapp)
+],
   providers: [],
   bootstrap: [AppComponent]
 })

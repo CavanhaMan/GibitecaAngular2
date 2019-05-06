@@ -1,5 +1,5 @@
-import { Routes, RouterModule } from '@angular/router';
-
+/*import { Routes, RouterModule } from '@angular/router';*/
+import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { LivrosComponent } from './livros/livros.component';
 import { CategoriaComponent } from './categoria/categoria.component';
@@ -7,7 +7,7 @@ import { EditoraComponent } from './editora/editora.component';
 import { GibiComponent } from './gibi/gibi.component';
 import { ClienteComponent } from './cliente/cliente.component';
 
-const routesapp : Routes = [
+export const routesapp : Routes = [
   { path: '', component: HomeComponent},
   { path: 'livros', component: LivrosComponent},
   { path: 'categoria',component: CategoriaComponent},
@@ -15,7 +15,7 @@ const routesapp : Routes = [
   { path: 'gibi', component: GibiComponent},
   { path: 'cliente', component: ClienteComponent}
 ]
-export const Routing = RouterModule.forRoot(routesapp);
+/*export const Routing = RouterModule.forRoot(routesapp);*/
 /*
 import {Routes, RouterModule } from '@angular/router'
 import { ProfessorComponent } from './professor/professor.component';
