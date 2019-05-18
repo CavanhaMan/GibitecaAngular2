@@ -60,7 +60,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngfor="let categoriasTabela of categorias"><!--  ng-click="seleciona(clientesTabela)">-->
+          <tr *ngFor="let categoriasTabela of categorias"><!--  ng-click="seleciona(clientesTabela)">-->
             <a [routerLink]="[categoriasTabela.codigo]">
             <td>{{ categoriasTabela.codigo }}</td></a>
             <td>{{ categoriasTabela.nome }}</td>

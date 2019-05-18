@@ -67,7 +67,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngfor="let gibisTabela of gibis"><!--  ng-click="seleciona(clientesTabela)">-->
+          <tr *ngFor="let gibisTabela of gibis"><!--  ng-click="seleciona(clientesTabela)">-->
             <a [routerLink]="[gibisTabela.codigo]">
             <td>{{ gibisTabela.codigo }}</td></a>
             <td>{{ gibisTabela.isbn }}</td>

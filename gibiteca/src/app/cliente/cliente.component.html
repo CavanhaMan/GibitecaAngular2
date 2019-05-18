@@ -93,7 +93,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngfor="let clientesTabela of clientes"><!--  ng-click="seleciona(clientesTabela)">-->
+        <tr *ngFor="let clientesTabela of clientes"><!--  ng-click="seleciona(clientesTabela)">-->
           <a [routerLink]="[clientesTabela.codigo]">
           <td>{{ clientesTabela.codigo }}</td></a>
           <td>{{ clientesTabela.nome }}</td>
