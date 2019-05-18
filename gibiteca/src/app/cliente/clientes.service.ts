@@ -1,9 +1,26 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
+import { Http,Headers } from '@angular/http';
+import { Cliente } from '../cliente';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class ClientesService {
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/catch';
+import { Observable } from 'rxjs/Observable';
 
-  constructor() { }
-}
+@Injectable()
+  export class ClientesService{
+    private url: string = 'http://localhost:9000/clientes';
+    constructor (private http: Http) {}
+
+    getAll(): Observable<Cliente[]> {
+      return this.http.get(this.url)
+                      .map(res => res.json())
+                      .catch(this.handleError);         
+    }
+  
+    private handleError(error: any) {
+      let erro = error.messsage || 'Server error';
+      console.error('Ocorreu um erro ',error);
+      return Observable.throw(erro);
+    }
+  }

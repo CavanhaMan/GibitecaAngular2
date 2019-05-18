@@ -2,8 +2,8 @@ var app = angular.module('todoApp', [])
 .controller('GibiController', function($scope,$http) {
   
   var url = 'http://localhost:9000/gibis';
-  var urlEditoras = 'http://localhost:9000/editoras';
-  var urlCategorias = 'http://localhost:9000/categorias';
+//  var urlEditoras = 'http://localhost:9000/editoras';
+//  var urlCategorias = 'http://localhost:9000/categorias';
   
   $scope.nomeTela = "Cadastro de Gibi";
 
