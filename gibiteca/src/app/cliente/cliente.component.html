@@ -93,8 +93,9 @@
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="clientesTabela in clientes" ng-click="seleciona(clientesTabela)">
-          <th scope="row">{{ clientesTabela.codigo }}</th>
+        <tr *ngfor="let clientesTabela of clientes"><!--  ng-click="seleciona(clientesTabela)">-->
+          <a [routerLink]="[clientesTabela.codigo]">
+          <td>{{ clientesTabela.codigo }}</td></a>
           <td>{{ clientesTabela.nome }}</td>
           <td>{{ clientesTabela.email }}</td>
           <td>{{ clientesTabela.endereco }}</td>
@@ -105,7 +106,7 @@
         </tr>
       </tbody>
     </table>
-    <span ng-show="(clientes | filter: criterio).length == 0">Infelizmente  n&atilde;o temos o que voc&ecirc; est&aacute; procurando</span>
+    <span ngfor="(clientes | filter: criterio).length == 0">Infelizmente  n&atilde;o temos o que voc&ecirc; est&aacute; procurando</span>
   </div>
 </div>
 </div>

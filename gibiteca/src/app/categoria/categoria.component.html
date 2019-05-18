@@ -60,8 +60,9 @@
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="clientesTabela in clientes" ng-click="seleciona(clientesTabela)">
-            <th scope="row">{{ categoriasTabela.codigo }}</th>
+          <tr *ngfor="let categoriasTabela of categorias"><!--  ng-click="seleciona(clientesTabela)">-->
+            <a [routerLink]="[categoriasTabela.codigo]">
+            <td>{{ categoriasTabela.codigo }}</td></a>
             <td>{{ categoriasTabela.nome }}</td>
             <td>{{ categoriasTabela.descricao }}</td>
           </tr>
