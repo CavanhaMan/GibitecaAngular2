@@ -11,7 +11,7 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
   export class CategoriasService{
     private url: string = 'http://localhost:9000/categorias';
-    constructor (private http: Http) {}
+    constructor (private http: Http) {    }
 
     getAll(): Observable<Categoria[]> {
       return this.http.get(this.url)

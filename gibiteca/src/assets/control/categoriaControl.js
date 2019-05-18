@@ -3,7 +3,7 @@ var app = angular.module('todoApp', [])
   
   var url = 'http://localhost:9000/categorias';
   
-  $scope.nomeTela = "Cadastro de Categorias";
+  /*$scope.nomeTela = "Cadastro de Categorias";*/
 
   $scope.pesquisar = function() {
     $http.get(url).then(function (response) {

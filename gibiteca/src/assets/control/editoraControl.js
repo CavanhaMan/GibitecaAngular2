@@ -3,7 +3,7 @@ var app = angular.module('todoApp', [])
   
   var url = 'http://localhost:9000/editoras';
   
-  $scope.nomeTela = "Cadastro de Editoras";
+  /*$scope.nomeTela = "Cadastro de Editoras";*/
 
   $scope.pesquisar = function() {
     $http.get(url).then(function (response) {
