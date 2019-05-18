@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Editora } from '../editora';
 
 @Component({
   selector: 'app-editora',
@@ -9,7 +10,15 @@ export class EditoraComponent implements OnInit {
 
   constructor() { }
 
+  editoras: Editora[] = [];
+
   ngOnInit() {
+    this.editoras = [{
+      'codigo':1,
+      'nome':'Editora tal',
+      'site':'www.editoratal.com.br',
+      'pais':'Brasil'
+    }]
   }
 
 }
