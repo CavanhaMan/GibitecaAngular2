@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Editora } from '../editora';
+import { EditorasService } from './editoras.service';
 
 @Component({
   selector: 'app-editora',
@@ -8,11 +9,16 @@ import { Editora } from '../editora';
 })
 export class EditoraComponent implements OnInit {
 
-  constructor() { }
+  constructor( private editoraService: EditorasService ) { }
 
   editoras: Editora[] = [];
 
+  criterio: String;
+
   ngOnInit() {
+    this.editoraService.getAll() //getAll adicionou o código [x: string]: any; no arquivo editora.service.ts
+    .subscribe(data => this.editoras = data, err => {alert('Aconteceu um erro!');});
+
     this.editoras = [{
       'codigo':1,
       'nome':'Editora tal',

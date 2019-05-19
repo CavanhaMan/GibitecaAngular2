@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Gibi } from '../gibi';
+import { GibisService } from './gibis.service';
+import { GibiService } from '../gibi.service';
 
 @Component({
   selector: 'app-gibi',
@@ -8,11 +10,16 @@ import { Gibi } from '../gibi';
 })
 export class GibiComponent implements OnInit {
 
-  constructor() { }
+  constructor( private gibiService: GibisService ) { }
+
+  criterio: String;
 
   gibis: Gibi[] = [];
 
   ngOnInit() {
+    this.gibiService.getAll()
+    .subscribe(data => this.gibis = data, err => {alert('Aconteceu um erro!');});
+
     this.gibis = [{
       'codigo':1,
       'autor':'Fulano',

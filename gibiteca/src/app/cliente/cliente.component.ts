@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Cliente } from '../cliente';
+import { ClientesService } from './clientes.service';
 
 @Component({
   selector: 'app-cliente',
@@ -8,11 +9,16 @@ import { Cliente } from '../cliente';
 })
 export class ClienteComponent implements OnInit {
 
-  constructor() { }
+  constructor( private clienteService: ClientesService ) { }
   
   clientes: Cliente[] = [];
 
+  criterio: String;
+
   ngOnInit() {
+    this.clienteService.getAll() //getAll adicionou o código [x: string]: any; no arquivo cliente.service.ts
+        .subscribe(data => this.clientes = data, err => {alert('Aconteceu um erro!');});
+
     this.clientes = [{
       'codigo':1,
       'nome':'Rodrigo Cavanha',
