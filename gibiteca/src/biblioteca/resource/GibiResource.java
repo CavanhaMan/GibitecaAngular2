@@ -28,7 +28,7 @@ import com.biblioteca.repository.GibiRepository;
 
 @RestController
 @RequestMapping(value = "/gibis")
-@CrossOrigin(origins = "http://localhost")
+@CrossOrigin(origins = "http://localhost:4200")
 public class GibiResource {
 
 	@Autowired

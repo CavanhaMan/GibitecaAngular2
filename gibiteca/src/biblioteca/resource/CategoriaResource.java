@@ -28,7 +28,7 @@ import com.biblioteca.repository.CategoriaRepository;
 
 @RestController
 @RequestMapping(value = "/categorias")
-@CrossOrigin(origins = "http://localhost")
+@CrossOrigin(origins = "http://localhost:4200")
 public class CategoriaResource {
 
 	@Autowired
