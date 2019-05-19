@@ -31,11 +31,11 @@
         <div class="form-row">
           <div class="form-group col-md-2">
             <label for="inputCodigo">Codigo</label>
-            <input type="text" class="form-control" id="inputCodigo" name="txtCodigo" disabled [(ngModel)]="editora.codigo">
+            <input type="text" class="form-control" name="txtCodigo" disabled [(ngModel)]="editora.codigo">
           </div>
           <div class="form-group col-md-6">
             <label for="inputNome">Nome</label>
-            <input type="text" class="form-control is-valid" id="inputNome" name="txtNome" required [(ngModel)]="editora.nome">
+            <input type="text" class="form-control is-valid" name="txtNome" required [(ngModel)]="editora.nome">
             <div class="invalid-feedback">Digite o nome.</div>
           </div>
         </div>
@@ -43,12 +43,12 @@
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputSite">Website</label>
-            <input type="text" class="form-control is-valid" id="inputSite" name="txtSite" required [(ngModel)]="editora.site">
+            <input type="text" class="form-control is-valid" name="txtSite" required [(ngModel)]="editora.site">
             <div class="invalid-feedback">Digite o site da editora. </div>
           </div>
           <div class="form-group col-md-2">
             <label for="inputPais">Pais</label>
-            <input type="text" class="form-control is-valid" id="inputPais" name="txtPais" required [(ngModel)]="editora.pais">
+            <input type="text" class="form-control is-valid" name="txtPais" required [(ngModel)]="editora.pais">
             <div class="invalid-feedback">Digite o pais. </div>
           </div>
         </div> 

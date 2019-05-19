@@ -22,6 +22,8 @@ import { EditoraComponent } from './editora/editora.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
 import { DECLARATION_VIEW } from '@angular/core/src/render3/interfaces/view';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { DECLARATION_VIEW } from '@angular/core/src/render3/interfaces/view';
     MatButtonModule,
     FlexLayoutModule,
 /*--------------fim dos imports copiado do menu---------------*/
+    FormsModule,
+    HttpModule,
     RouterModule.forRoot(routesapp)
 ],
   providers: [],
