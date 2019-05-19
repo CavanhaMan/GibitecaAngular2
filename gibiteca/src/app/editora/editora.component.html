@@ -27,29 +27,29 @@
       <button type="button" (click)="excluir()" class="btn btn-danger">Excluir</button>
       <button type="button" (click)="pesquisar()" class="btn btn-warning">Pesquisar</button>
       <br /><br />
-      <form class="was-validated">
+      <form class="was-validated" #cadastro="ngForm" (ngSubmit)="salvar()">
         <div class="form-row">
           <div class="form-group col-md-2">
-            <label for="inputCodigo">Codigo</label>
-            <input type="text" class="form-control" name="txtCodigo" disabled [(ngModel)]="editora.codigo">
+            <label for="codigo">Codigo</label>
+            <input type="text" class="form-control" #codigo="ngModel" name="codigo" disabled [(ngModel)]="editora.codigo">
           </div>
           <div class="form-group col-md-6">
-            <label for="inputNome">Nome</label>
-            <input type="text" class="form-control is-valid" name="txtNome" required [(ngModel)]="editora.nome">
-            <div class="invalid-feedback">Digite o nome.</div>
+            <label for="nome">Nome</label>
+            <input type="text" class="form-control is-valid" #nome="ngModel" name="nome" required [(ngModel)]="editora.nome">
+            <div [hidden]="nome.valid" class="invalid-feedback">Digite o nome.</div>
           </div>
         </div>
         <!-- -->
         <div class="form-row">
           <div class="form-group col-md-6">
-            <label for="inputSite">Website</label>
-            <input type="text" class="form-control is-valid" name="txtSite" required [(ngModel)]="editora.site">
-            <div class="invalid-feedback">Digite o site da editora. </div>
+            <label for="site">Website</label>
+            <input type="text" class="form-control is-valid" #site="ngModel" name="site" required [(ngModel)]="editora.site">
+            <div [hidden]="site.valid" class="invalid-feedback">Digite o site da editora. </div>
           </div>
           <div class="form-group col-md-2">
-            <label for="inputPais">Pais</label>
-            <input type="text" class="form-control is-valid" name="txtPais" required [(ngModel)]="editora.pais">
-            <div class="invalid-feedback">Digite o pais. </div>
+            <label for="pais">Pais</label>
+            <input type="text" class="form-control is-valid" #pais="ngModel" name="pais" required [(ngModel)]="editora.pais">
+            <div [hidden]="pais.valid" class="invalid-feedback">Digite o pais. </div>
           </div>
         </div> 
       </form>

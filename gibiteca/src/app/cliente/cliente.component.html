@@ -27,52 +27,52 @@
     <button type="button" (click)="excluir()" class="btn btn-danger">Excluir</button>
     <button type="button" (click)="pesquisar()" class="btn btn-warning">Pesquisar</button>
     <br /><br />
-    <form class="was-validated">
+    <form class="was-validated" #cadastro="ngForm" (ngSubmit)="salvar()">
       <div class="form-row">
         <div class="form-group col-md-2">
-          <label for="inputCodigo">Codigo</label>
-          <input type="text" class="form-control" name="txtCodigo" disabled [(ngModel)]="cliente.codigo">
+          <label for="Codigo">Codigo</label>
+          <input type="text" class="form-control" #codigo="ngModel" name="codigo" disabled [(ngModel)]="cliente.codigo">
         </div>
         <div class="form-group col-md-6">
-          <label for="inputNome">Nome</label>
-          <input type="text" class="form-control is-valid" name="txtNome" required [(ngModel)]="cliente.nome">
-          <div class="invalid-feedback">Digite o nome.</div>
+          <label for="nome">Nome</label>
+          <input type="text" class="form-control is-valid" #nome="ngModel" name="nome" required [(ngModel)]="cliente.nome">
+          <div [hidden]="nome.valid" class="invalid-feedback">Digite o nome.</div>
         </div>
         <div class="form-group col-md-4">
-          <label for="inputCargo">E-mail</label>
-          <input type="text" class="form-control is-valid" name="txtCargo" required [(ngModel)]="cliente.cargo">
-          <div class="invalid-feedback">Digite seu e-mail. </div>
+          <label for="Cargo">E-mail</label>
+          <input type="text" class="form-control is-valid" #cargo="ngModel" name="cargo" required [(ngModel)]="cliente.cargo">
+          <div [hidden]="cargo.valid" class="invalid-feedback">Digite seu e-mail. </div>
         </div>
       </div>
       <!-- -->
       <div class="form-row">
         <div class="form-group col-md-6">
-          <label for="inputEndereco">Endereço</label>
-          <input type="text" class="form-control is-valid" name="txtEndereco" required [(ngModel)]="cliente.endereco">
-          <div class="invalid-feedback">Digite seu endereço. </div>
+          <label for="endereco">Endereço</label>
+          <input type="text" class="form-control is-valid" #endereco="ngModel" name="endereco" required [(ngModel)]="cliente.endereco">
+          <div [hidden]="endereco.valid" class="invalid-feedback">Digite seu endereço. </div>
         </div>
         <div class="form-group col-md-4">
-          <label for="inputCidade">Cidade</label>
-          <input type="text" class="form-control is-valid" name="txtCidade" required [(ngModel)]="cliente.cidade">
-          <div class="invalid-feedback">Digite sua cidade. </div>
+          <label for="cidade">Cidade</label>
+          <input type="text" class="form-control is-valid" #cidade="ngModel" name="cidade" required [(ngModel)]="cliente.cidade">
+          <div [hidden]="cidade.valid" class="invalid-feedback">Digite sua cidade. </div>
         </div>
         <div class="form-group col-md-2">
-          <label for="inputCep">Cep</label>
-          <input type="text" class="form-control is-valid" name="txtCep" required [(ngModel)]="cliente.cep">
-          <div class="invalid-feedback">Digite seu cep. </div>
+          <label for="cep">Cep</label>
+          <input type="text" class="form-control is-valid" #cep="ngModel" name="cep" required [(ngModel)]="cliente.cep">
+          <div [hidden]="cep.valid" class="invalid-feedback">Digite seu cep. </div>
         </div>
       </div>                
       <!-- -->
       <div class="form-row">
         <div class="form-group col-md-2">
-          <label for="inputPais">Estado</label>
-          <input type="text" class="form-control is-valid" name="txtPais" required [(ngModel)]="cliente.pais">
-          <div class="invalid-feedback">Digite seu estado. </div>
+          <label for="pais">Estado</label>
+          <input type="text" class="form-control is-valid" #pais="ngModel" name="pais" required [(ngModel)]="cliente.pais">
+          <div [hidden]="pais.valid" class="invalid-feedback">Digite seu estado. </div>
         </div>
         <div class="form-group col-md-4">
-          <label for="inputTelefone">Telefone</label>
-          <input type="text" class="form-control is-valid" name="txtTelefone" required [(ngModel)]="cliente.telefone">
-          <div class="invalid-feedback">Digite seu telefone. </div>
+          <label for="telefone">Telefone</label>
+          <input type="text" class="form-control is-valid" #telefone="ngModel" name="telefone" required [(ngModel)]="cliente.telefone">
+          <div [hidden]="telefone.valid" class="invalid-feedback">Digite seu telefone. </div>
         </div>
       </div> 
     </form>

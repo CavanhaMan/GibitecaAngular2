@@ -27,30 +27,30 @@
       <button type="button" (click)="excluir()" class="btn btn-danger">Excluir</button>
       <button type="button" (click)="pesquisar()" class="btn btn-warning">Pesquisar</button>
       <br /><br />
-      <form class="was-validated">
+      <form class="was-validated" #cadastro="ngForm" (ngSubmit)="salvar()">
         <div class="form-row">
           <div class="form-group col-md-2">
-            <label for="inputCodigo">Codigo</label>
-            <input type="text" class="form-control" name="txtCodigo" disabled [(ngModel)]="gibi.codigo">
+            <label for="codigo">Codigo</label>
+            <input type="text" class="form-control" #codigo="ngModel" name="codigo" disabled [(ngModel)]="gibi.codigo">
           </div>
           <div class="form-group col-md-4">
-              <label for="inputIsbn">ISBN</label>
-              <input type="text" class="form-control is-valid" name="txtIsbn" required [(ngModel)]="gibi.isbn">
-              <div class="invalid-feedback">Digite o ISBN. </div>
+              <label for="isbn">ISBN</label>
+              <input type="text" class="form-control is-valid" #isbn="ngModel" name="isbn" required [(ngModel)]="gibi.isbn">
+              <div [hidden]="isbn.valid" class="invalid-feedback">Digite o ISBN.</div>
             </div>
           </div>
           <div class="form-row">
                 <div class="form-group col-md-6">
-            <label for="inputTitulo">Título</label>
-            <input type="text" class="form-control is-valid" name="txtNome" required [(ngModel)]="gibi.nome">
-            <div class="invalid-feedback">Digite o título do gibi.</div>
+            <label for="titulo">Título</label>
+            <input type="text" class="form-control is-valid" #nome="ngModel" name="nome" required [(ngModel)]="gibi.nome">
+            <div [hidden]="nome.valid" class="invalid-feedback">Digite o título do gibi.</div>
           </div>
         </div>
         <div class="form-row">
         <div class="form-group col-md-6">
-            <label for="inputAutor">Autor</label>
-            <input type="text" class="form-control is-valid" name="txtAutor" required [(ngModel)]="gibi.autor">
-            <div class="invalid-feedback">Digite o nome do autor. </div>
+            <label for="autor">Autor</label>
+            <input type="text" class="form-control is-valid" #autor="ngModel" name="autor" required [(ngModel)]="gibi.autor">
+            <div [hidden]="autor.valid" class="invalid-feedback">Digite o nome do autor. </div>
           </div>
         </div>
       </form>

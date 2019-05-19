@@ -27,24 +27,24 @@
       <button type="button" (click)="excluir()" class="btn btn-danger">Excluir</button>
       <button type="button" (click)="pesquisar()" class="btn btn-warning">Pesquisar</button>
       <br /><br />
-      <form class="was-validated">
+      <form class="was-validated" #cadastro="ngForm" (ngSubmit)="salvar()">
         <div class="form-row">
           <div class="form-group col-md-2">
-            <label for="inputCodigo">Codigo</label>
-            <input type="text" class="form-control" name="txtCodigo" disabled [(ngModel)]="categoria.codigo">
+            <label for="codigo">Codigo</label>
+            <input type="text" class="form-control" #codigo="ngModel" name="codigo" disabled [(ngModel)]="categoria.codigo">
           </div>
           <div class="form-group col-md-6">
-            <label for="inputNome">Nome</label>
-            <input type="text" class="form-control is-valid" name="txtNome" required [(ngModel)]="categoria.nome">
-            <div class="invalid-feedback">Digite o nome.</div>
+            <label for="nome">Nome</label>
+            <input type="text" class="form-control is-valid" #nome="ngModel" name="nome" required [(ngModel)]="categoria.nome">
+            <div [hidden]="nome.valid" class="invalid-feedback">Digite o nome.</div>
           </div>
         </div>
         <!-- -->
         <div class="form-row">
           <div class="form-group col-md-8">
-            <label for="inputDescricao">Descrição</label>
-            <input type="text" class="form-control is-valid" name="txtDescicao" required [(ngModel)]="categoria.descricao">
-            <div class="invalid-feedback">Digite a descrição. </div>
+            <label for="descricao">Descrição</label>
+            <input type="text" class="form-control is-valid" #descricao="ngModel" name="descricao" required [(ngModel)]="categoria.descricao">
+            <div [hidden]="descricao.valid" class="invalid-feedback">Digite a descrição. </div>
           </div>
         </div>
       </form>
