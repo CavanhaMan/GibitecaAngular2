@@ -8,8 +8,7 @@ import { MatButtonModule,
          MatIconModule,
          MatListModule,
          MatSidenavModule,
-         MatToolbarModule
-} from '@angular/material';
+         MatToolbarModule } from '@angular/material';
 /*--------------fim dos imports copiado do menu---------------*/
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,7 +22,9 @@ import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
 import { DECLARATION_VIEW } from '@angular/core/src/render3/interfaces/view';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule,JsonpModule } from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -36,9 +37,9 @@ import { HttpModule } from '@angular/http';
     HomeComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
-/*--------------imports copiado do menu---------------*/
     BrowserAnimationsModule,
     MatIconModule,
     MatListModule,
@@ -46,12 +47,14 @@ import { HttpModule } from '@angular/http';
     MatSidenavModule,
     MatButtonModule,
     FlexLayoutModule,
-/*--------------fim dos imports copiado do menu---------------*/
     FormsModule,
     HttpModule,
+    HttpClientModule,
+    JsonpModule,
     RouterModule.forRoot(routesapp)
 ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
