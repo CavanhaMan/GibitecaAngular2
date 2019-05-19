@@ -36,6 +36,11 @@ export class CategoriaComponent implements OnInit {
         } else {this.isNew = true;}
       }
     );
+    this.categorias = [{
+      'codigo':1,
+      'nome':'Aventura',
+      'descricao':'Gibis de aventura'
+    }]
   }
 
   /********* */
@@ -74,11 +79,6 @@ export class CategoriaComponent implements OnInit {
     this.categoriaService.getAll()
     .subscribe(data => this.categorias = data, err => {alert('Aconteceu um erro!');});
 
-    this.categorias = [{
-      'codigo':1,
-      'nome':'Aventura',
-      'descricao':'Gibis de aventura'
-    }]
   }
 */
 }

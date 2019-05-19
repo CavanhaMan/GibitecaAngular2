@@ -36,6 +36,17 @@ export class ClienteComponent implements OnInit {
         } else {this.isNew = true;}
       }
     );
+
+    this.clientes = [{
+      'codigo':1,
+      'nome':'Rodrigo Cavanha',
+      'email':'cavanhaman@hotmail.com',
+      'endereco':'Rua 1, 1444',
+      'cidade':'Uberlandia',
+      'cep':'38.408-214',
+      'pais':'Brasil',
+      'telefone':'3432109876'
+    }]
   }
 
   /********* */
@@ -69,20 +80,8 @@ export class ClienteComponent implements OnInit {
     }
   }
 
-  /********* 
-    this.clienteService.getAll()
-        .subscribe(data => this.clientes = data, err => {alert('Aconteceu um erro!');});
+    //this.clienteService.getAll()
+    //.subscribe(data => this.clientes = data, err => {alert('Aconteceu um erro!');});
 
-    this.clientes = [{
-      'codigo':1,
-      'nome':'Rodrigo Cavanha',
-      'email':'cavanhaman@hotmail.com',
-      'endereco':'Rua 1, 1444',
-      'cidade':'Uberlandia',
-      'cep':'38.408-214',
-      'pais':'Brasil',
-      'telefone':'3432109876'
-    }]
-  }
-*/
+
 }

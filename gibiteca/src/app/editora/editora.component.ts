@@ -36,6 +36,12 @@ export class EditoraComponent implements OnInit {
         } else {this.isNew = true;}
       }
     );
+    this.editoras = [{
+      'codigo':1,
+      'nome':'Editora tal',
+      'site':'www.editoratal.com.br',
+      'pais':'Brasil'
+    }]
   }
 
   /********* */
@@ -74,12 +80,7 @@ export class EditoraComponent implements OnInit {
     this.editoraService.getAll()
     .subscribe(data => this.editoras = data, err => {alert('Aconteceu um erro!');});
 
-    this.editoras = [{
-      'codigo':1,
-      'nome':'Editora tal',
-      'site':'www.editoratal.com.br',
-      'pais':'Brasil'
-    }]
+
   }
 */
 }

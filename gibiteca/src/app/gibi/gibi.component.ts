@@ -36,6 +36,12 @@ export class GibiComponent implements OnInit {
         } else {this.isNew = true;}
       }
     );
+    this.gibis = [{
+      'codigo':1,
+      'autor':'Fulano',
+      'isbn':'123456789',
+      'titulo':'O gibi numero 1'
+    }]
   }
 
   /********* */
@@ -74,12 +80,7 @@ export class GibiComponent implements OnInit {
     this.gibiService.getAll()
     .subscribe(data => this.gibis = data, err => {alert('Aconteceu um erro!');});
 
-    this.gibis = [{
-      'codigo':1,
-      'autor':'Fulano',
-      'isbn':'123456789',
-      'titulo':'O gibi numero 1'
-    }]
+
   }
 */
 }
