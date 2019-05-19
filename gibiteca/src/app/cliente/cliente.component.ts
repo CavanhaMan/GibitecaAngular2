@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Cliente } from '../cliente';
 import { ClientesService } from './clientes.service';
+import { observable } from 'rxjs';
 
 @Component({
   selector: 'app-cliente',
@@ -25,6 +26,14 @@ export class ClienteComponent implements OnInit {
   criterio: String;
 
   ngOnInit() {
+    //this.clienteService.getAll().subscribe(data => this.clientes = data, err => {alert('Aconteceu um erro ' + err) ;});
+    
+    this.clienteService.clientesChanged.subscribe(
+      (observable: any) => observable.subscribe(
+        data => this.cliente = data
+      )
+    );
+
     this.novo();
     this.subscription = this.route.params.subscribe(
       (params: any) => {
@@ -79,9 +88,7 @@ export class ClienteComponent implements OnInit {
       }
     }
   }
-
-    //this.clienteService.getAll()
-    //.subscribe(data => this.clientes = data, err => {alert('Aconteceu um erro!');});
+   
 
 
 }

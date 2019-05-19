@@ -25,6 +25,14 @@ export class CategoriaComponent implements OnInit {
   criterio: String;
 
   ngOnInit() {
+    //this.categoriaService.getAll().subscribe(data => this.categorias = data, err => {alert('Aconteceu um erro ' + err) ;});
+
+    this.categoriaService.categoriasChanged.subscribe(
+      (observable: any) => observable.subscribe(
+        data => this.categoria = data
+      )
+    );
+
     this.novo();
     this.subscription = this.route.params.subscribe(
       (params: any) => {
@@ -74,11 +82,4 @@ export class CategoriaComponent implements OnInit {
     }
   }
 
-  /********* 
-
-    this.categoriaService.getAll()
-    .subscribe(data => this.categorias = data, err => {alert('Aconteceu um erro!');});
-
-  }
-*/
 }

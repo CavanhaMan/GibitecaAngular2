@@ -1,7 +1,6 @@
 /*import { Routes, RouterModule } from '@angular/router';*/
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { LivrosComponent } from './livros/livros.component';
 import { CategoriaComponent } from './categoria/categoria.component';
 import { EditoraComponent } from './editora/editora.component';
 import { GibiComponent } from './gibi/gibi.component';
@@ -9,11 +8,16 @@ import { ClienteComponent } from './cliente/cliente.component';
 
 export const routesapp : Routes = [
   { path: '', component: HomeComponent},
-  { path: 'livros', component: LivrosComponent},
   { path: 'categoria',component: CategoriaComponent},
   { path: 'editora', component: EditoraComponent},
   { path: 'gibi', component: GibiComponent},
-  { path: 'cliente', component: ClienteComponent}
+  { path: 'cliente', component: ClienteComponent},
+  
+  { path: './home/home.component.html', component: HomeComponent},
+  { path: './categoria/categoria.component.html',component: CategoriaComponent},
+  { path: './editora/editora.component.html', component: EditoraComponent},
+  { path: './gibi/gibi.component.html', component: GibiComponent},
+  { path: './cliente/cliente.component.html', component: ClienteComponent}
 ]
 /*export const Routing = RouterModule.forRoot(routesapp);*/
 /*

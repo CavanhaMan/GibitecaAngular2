@@ -25,6 +25,14 @@ export class GibiComponent implements OnInit {
   criterio: String;
 
   ngOnInit() {
+    //this.gibiService.getAll().subscribe(data => this.gibi = data, err => {alert('Aconteceu um erro ' + err) ;});
+
+    this.gibiService.gibisChanged.subscribe(
+      (observable: any) => observable.subscribe(
+        data => this.gibi = data
+      )
+    );
+
     this.novo();
     this.subscription = this.route.params.subscribe(
       (params: any) => {
@@ -75,12 +83,4 @@ export class GibiComponent implements OnInit {
     }
   }
 
-  /********* 
-
-    this.gibiService.getAll()
-    .subscribe(data => this.gibis = data, err => {alert('Aconteceu um erro!');});
-
-
-  }
-*/
 }

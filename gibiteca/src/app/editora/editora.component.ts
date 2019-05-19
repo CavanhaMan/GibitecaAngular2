@@ -25,6 +25,14 @@ export class EditoraComponent implements OnInit {
   criterio: String;
 
   ngOnInit() {
+    //this.editoraService.getAll().subscribe(data => this.editoras = data, err => {alert('Aconteceu um erro ' + err) ;});
+
+    this.editoraService.editorasChanged.subscribe(
+      (observable: any) => observable.subscribe(
+        data => this.editora = data
+      )
+    );
+
     this.novo();
     this.subscription = this.route.params.subscribe(
       (params: any) => {
@@ -75,12 +83,4 @@ export class EditoraComponent implements OnInit {
     }
   }
 
-  /********* 
-
-    this.editoraService.getAll()
-    .subscribe(data => this.editoras = data, err => {alert('Aconteceu um erro!');});
-
-
-  }
-*/
 }
