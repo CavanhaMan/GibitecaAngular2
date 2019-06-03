@@ -59,13 +59,17 @@ export class GibiComponent implements OnInit {
 
   voltar() {this.router.navigate(['/gibis']);}
 
+  pesquisarTodos() {
+    this.gibiService.getAll().subscribe(data =>this.gibis = data, err =>{alert('Aconteceu um erro!'); 
+  });}
+
   salvar() {
     let result;
     if (this.isNew) {result = this.gibiService.add(this.gibi);}
     else {result = this.gibiService.update(this.gibi);}
     this.novo();
     this.voltar();
-    result.subscribe(data => alert('sucesso ' +data),
+    result.subscribe(data => {alert('sucesso ' +data); this.pesquisarTodos();},
     err => {alert("An error occurred. "+ err);});
   }
 

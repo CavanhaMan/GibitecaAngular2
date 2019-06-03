@@ -58,13 +58,17 @@ export class CategoriaComponent implements OnInit {
 
   voltar() {this.router.navigate(['/categorias']);}
 
+  pesquisarTodos() {
+    this.categoriaService.getAll().subscribe(data =>this.categorias = data, err =>{alert('Aconteceu um erro!'); 
+  });}
+
   salvar() {
     let result;
     if (this.isNew) {result = this.categoriaService.add(this.categoria);}
     else {result = this.categoriaService.update(this.categoria);}
     this.novo();
     this.voltar();
-    result.subscribe(data => alert('sucesso ' +data),
+    result.subscribe(data => {alert('sucesso ' +data); this.pesquisarTodos();},
     err => {alert("An error occurred. "+ err);});
   }
 

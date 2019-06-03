@@ -65,13 +65,18 @@ export class ClienteComponent implements OnInit {
 
   voltar() {this.router.navigate(['/clientes']);}
 
+  pesquisarTodos() {
+    this.clienteService.getAll().subscribe(data =>this.clientes = data, err =>{alert('Aconteceu um erro!'); 
+  });}
+
+
   salvar() {
     let result;
     if (this.isNew) {result = this.clienteService.add(this.cliente);}
     else {result = this.clienteService.update(this.cliente);}
     this.novo();
     this.voltar();
-    result.subscribe(data => alert('sucesso ' +data),
+    result.subscribe(data => {alert('sucesso ' +data); this.pesquisarTodos();},
     err => {alert("An error occurred. "+ err);});
   }
 

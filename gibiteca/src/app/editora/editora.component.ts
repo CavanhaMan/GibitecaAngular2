@@ -59,13 +59,17 @@ export class EditoraComponent implements OnInit {
 
   voltar() {this.router.navigate(['/editoras']);}
 
+  pesquisarTodos() {
+    this.editoraService.getAll().subscribe(data =>this.editoras = data, err =>{alert('Aconteceu um erro!'); 
+  });}
+
   salvar() {
     let result;
     if (this.isNew) {result = this.editoraService.add(this.editora);}
     else {result = this.editoraService.update(this.editora);}
     this.novo();
     this.voltar();
-    result.subscribe(data => alert('sucesso ' +data),
+    result.subscribe(data => {alert('sucesso ' +data); this.pesquisarTodos();},
     err => {alert("An error occurred. "+ err);});
   }
 
