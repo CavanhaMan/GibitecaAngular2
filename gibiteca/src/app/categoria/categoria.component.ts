@@ -44,11 +44,14 @@ export class CategoriaComponent implements OnInit {
         } else {this.isNew = true;}
       }
     );
-    this.categorias = [{
+
+    this.pesquisarTodos();
+
+/*    this.categorias = [{
       'codigo':1,
       'nome':'Aventura',
       'descricao':'Gibis de aventura'
-    }]
+    }]*/
   }
 
   /********* */

@@ -27,13 +27,6 @@ export class ClienteComponent implements OnInit {
 
   ngOnInit() {
     //this.clienteService.getAll().subscribe(data => this.clientes = data, err => {alert('Aconteceu um erro ' + err) ;});
-    
-    this.clienteService.clientesChanged.subscribe(
-      (observable: any) => observable.subscribe(
-        data => this.cliente = data
-      )
-    );
-
     this.novo();
     this.subscription = this.route.params.subscribe(
       (params: any) => {
@@ -45,8 +38,16 @@ export class ClienteComponent implements OnInit {
         } else {this.isNew = true;}
       }
     );
+    
+    this.clienteService.clientesChanged.subscribe(
+      (observable: any) => observable.subscribe(
+        data => this.cliente = data
+      )
+    );
 
-    this.clientes = [{
+    this.pesquisarTodos();
+
+/*    this.clientes = [{
       'codigo':1,
       'nome':'Rodrigo Cavanha',
       'email':'cavanhaman@hotmail.com',
@@ -55,27 +56,28 @@ export class ClienteComponent implements OnInit {
       'cep':'38.408-214',
       'pais':'Brasil',
       'telefone':'3432109876'
-    }]
+    }]*/
   }
+
+  pesquisarTodos() {
+    this.clienteService.getAll().subscribe(data =>this.clientes = data, err =>{alert('Aconteceu um erro!'); 
+  });}
 
   /********* */
   novo() {this.cliente = new Cliente();}
 
   cancelar() {this.voltar();}
 
-  voltar() {this.router.navigate(['/clientes']);}
-
-  pesquisarTodos() {
-    this.clienteService.getAll().subscribe(data =>this.clientes = data, err =>{alert('Aconteceu um erro!'); 
-  });}
-
+  voltar() {this.router.navigate(['/cliente']);}
 
   salvar() {
     let result;
     if (this.isNew) {result = this.clienteService.add(this.cliente);}
     else {result = this.clienteService.update(this.cliente);}
+    
     this.novo();
     this.voltar();
+    
     result.subscribe(data => {alert('sucesso ' +data); this.pesquisarTodos();},
     err => {alert("An error occurred. "+ err);});
   }
@@ -93,7 +95,4 @@ export class ClienteComponent implements OnInit {
       }
     }
   }
-   
-
-
 }

@@ -44,12 +44,15 @@ export class GibiComponent implements OnInit {
         } else {this.isNew = true;}
       }
     );
-    this.gibis = [{
+
+    this.pesquisarTodos();
+
+/*    this.gibis = [{
       'codigo':1,
       'autor':'Fulano',
       'isbn':'123456789',
       'titulo':'O gibi numero 1'
-    }]
+    }]*/
   }
 
   /********* */

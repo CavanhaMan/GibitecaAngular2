@@ -44,12 +44,15 @@ export class EditoraComponent implements OnInit {
         } else {this.isNew = true;}
       }
     );
-    this.editoras = [{
+
+    this.pesquisarTodos();
+
+/*    this.editoras = [{
       'codigo':1,
       'nome':'Editora tal',
       'site':'www.editoratal.com.br',
       'pais':'Brasil'
-    }]
+    }]*/
   }
 
   /********* */
