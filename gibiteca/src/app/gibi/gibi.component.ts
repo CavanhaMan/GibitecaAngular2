@@ -43,6 +43,7 @@ export class GibiComponent implements OnInit {
           .subscribe(data => this.gibi = data);
         } else {this.isNew = true;}
       }
+     
     );
 
     this.pesquisarTodos();
@@ -60,7 +61,7 @@ export class GibiComponent implements OnInit {
 
   cancelar() {this.voltar();}
 
-  voltar() {this.router.navigate(['/gibis']);}
+  voltar() {this.router.navigate(['/gibi']);}
 
   pesquisarTodos() {
     this.gibiService.getAll().subscribe(data =>this.gibis = data, err =>{alert('Aconteceu um erro!'); 
@@ -70,9 +71,9 @@ export class GibiComponent implements OnInit {
     let result;
     if (this.isNew) {result = this.gibiService.add(this.gibi);}
     else {result = this.gibiService.update(this.gibi);}
-    this.novo();
     this.voltar();
-    result.subscribe(data => {alert('sucesso ' +data); this.pesquisarTodos();},
+    this.novo();
+    result.subscribe(data => {alert('sucesso ' +data); this.pesquisarTodos(); },
     err => {alert("An error occurred. "+ err);});
   }
 

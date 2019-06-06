@@ -28,7 +28,7 @@ import com.biblioteca.repository.GibiRepository;
 
 @RestController
 @RequestMapping(value = "/gibis")
-@CrossOrigin(origins = "http://localhost")
+@CrossOrigin(origins = "http://localhost:4200")
 public class GibiResource {
 
 	@Autowired
@@ -42,8 +42,8 @@ public class GibiResource {
 
 	@PostMapping
 	public ResponseEntity<?> salvar(@Valid @RequestBody Gibi gibi) {
-		gibi.getCategoria().setCodigo(gibi.getCategoria().getCodigo());
-		gibi.getEditora().setCodigo(gibi.getEditora().getCodigo());
+		//gibi.getCategoria().setCodigo(gibi.getCategoria().getCodigo());
+		//gibi.getEditora().setCodigo(gibi.getEditora().getCodigo());
 		service.save(gibi);
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(gibi.getCodigo()).toUri();
 		return ResponseEntity.created(location).build();

@@ -63,5 +63,9 @@ public class Gibi implements Serializable {
 		this.categoria = categoria;
 		this.editora = editora;
 	}
+	
+	public Gibi() {
+		
+	}
 
 }
