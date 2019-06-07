@@ -48,12 +48,12 @@ export class GibiComponent implements OnInit {
 
     this.pesquisarTodos();
 
-/*    this.gibis = [{
-      'codigo':1,
+    this.gibis = [{
+      'codigo':10,
       'autor':'Fulano',
       'isbn':'123456789',
       'titulo':'O gibi numero 1'
-    }]*/
+    }]
   }
 
   /********* */
