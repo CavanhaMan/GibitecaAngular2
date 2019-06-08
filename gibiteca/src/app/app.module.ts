@@ -21,11 +21,13 @@ import { EditoraComponent } from './editora/editora.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
 import { DECLARATION_VIEW } from '@angular/core/src/render3/interfaces/view';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule,JsonpModule } from '@angular/http';
 import {HttpClientModule} from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
+import { LoginServiceService } from './login-service.service';
+import { AuthGuard } from './login/login.guard';
 
 @NgModule({
   declarations: [
@@ -53,9 +55,13 @@ import { LoginComponent } from './login/login.component';
     HttpModule,
     HttpClientModule,
     JsonpModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routesapp)
 ],
-  providers: [],
+  providers: [
+    LoginServiceService,
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 
