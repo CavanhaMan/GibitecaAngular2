@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { routesapp } from './app-router';
+
+import { MenuComponent } from './menu/menu.component';
+
 /*--------------imports copiado do menu---------------*/
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';

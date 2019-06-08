@@ -1,0 +1,41 @@
+<!--------------------------inicio do código do menu-------------------------->
+<div style="height: 100vh;">
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span><a routerLink="/" mat-button><img class="logo" src="assets/img/barbagb.png" alt="CavanhaMan" width="120"></a></span>
+        <span class="example-spacer"></span>
+        <div fxShow="true" fxHide.lt-md="true"><!-- Menu expandido -->
+          <a routerLink="/gibi" mat-button><mat-icon>import_contacts</mat-icon>Gibi</a>
+          <a routerLink="/editora" mat-button><mat-icon>store</mat-icon>Editora</a>
+          <a routerLink="/categoria" mat-button><mat-icon>group_work</mat-icon>Categoria</a>
+          <a routerLink="/cliente" mat-button><mat-icon>person</mat-icon>Cliente</a>
+        </div>
+      </mat-toolbar-row>
+    </mat-toolbar>
+<!-- 
+  Para pegar novos ícones:
+  https://www.angularjswiki.com/angular/angular-material-icons-list-mat-icon-list/
+-->
+    <mat-sidenav-container fxFlexFill>
+      <mat-sidenav #sidenav>
+        <mat-nav-list><!-- Menu compacto para responsividade -->
+          <a routerLink="/gibi" mat-list-item><mat-icon>import_contacts</mat-icon>Gibi</a>
+          <a routerLink="/editora" mat-list-item><mat-icon>store</mat-icon>Editora</a>
+          <a routerLink="/categoria" mat-list-item><mat-icon>group_work</mat-icon>Categoria</a>
+          <a routerLink="/cliente" mat-list-item><mat-icon>person</mat-icon>Cliente</a>
+          <hr>
+          <a (click)="sidenav.toggle()" mat-list-item><mat-icon>cancel</mat-icon> Close</a>
+        </mat-nav-list>
+      </mat-sidenav>
+      <mat-sidenav-content fxFlexFill>
+          <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+<!--------------------------fim do código do menu-------------------------->
+<div class="container">
+    
+</div>
