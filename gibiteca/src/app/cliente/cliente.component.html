@@ -39,9 +39,9 @@
           <div [hidden]="nome.valid" class="invalid-feedback">Digite o nome.</div>
         </div>
         <div class="form-group col-md-4">
-          <label for="Cargo">E-mail</label>
-          <input type="text" class="form-control is-valid" #cargo="ngModel" name="cargo" required [(ngModel)]="cliente.cargo">
-          <div [hidden]="cargo.valid" class="invalid-feedback">Digite seu e-mail. </div>
+          <label for="email">E-mail</label>
+          <input type="text" class="form-control is-valid" #cargo="ngModel" name="email" required [(ngModel)]="cliente.email">
+          <div [hidden]="email.valid" class="invalid-feedback">Digite seu e-mail. </div>
         </div>
       </div>
       <!-- -->
