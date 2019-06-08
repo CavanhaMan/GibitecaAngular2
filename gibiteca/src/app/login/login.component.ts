@@ -13,10 +13,8 @@ export class LoginComponent implements OnInit {
   error: false;
   errorMessage = '';
 
-  constructor(
-    private fb: FormBuilder,
-    private authService: LoginServiceService
-  ){}
+  constructor(private fb: FormBuilder,
+    private authService: LoginServiceService){}
 
   onSignin(){
     this.authService.signIn(this.form.value);

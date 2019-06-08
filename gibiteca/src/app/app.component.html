@@ -12,9 +12,17 @@
           <a routerLink="/editora" mat-button><mat-icon>store</mat-icon>Editora</a>
           <a routerLink="/categoria" mat-button><mat-icon>group_work</mat-icon>Categoria</a>
           <a routerLink="/cliente" mat-button><mat-icon>person</mat-icon>Cliente</a>
+          <a class="nav-link" *ngIf="!isAuth()" routerLink="signin">Login</a>
+          <a class="nav-link" *ngIf="hisAuth()" (click)="onLogout()">Logout</a>
+          <!-- <div class="nav-iten active" *ngIf="!isAuth()">
+            <a class="nav-link" routerLink="signin">Login</a>
+          </div>
+          <div class="nav-iten active" *ngIf="!isAuth()">
+            <a class="nav-link" (click)="onLogout()">Logout</a>
+          </div> -->
         </div>
-      </mat-toolbar-row>
-    </mat-toolbar>
+    </mat-toolbar-row>
+  </mat-toolbar>
 <!-- 
   Para pegar novos ícones:
   https://www.angularjswiki.com/angular/angular-material-icons-list-mat-icon-list/

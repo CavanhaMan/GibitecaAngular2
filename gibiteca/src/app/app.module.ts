@@ -2,8 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { routesapp } from './app-router';
 
-import { MenuComponent } from './menu/menu.component';
-
 /*--------------imports copiado do menu---------------*/
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -23,13 +21,11 @@ import { ClienteComponent } from './cliente/cliente.component';
 import { EditoraComponent } from './editora/editora.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
-import { DECLARATION_VIEW } from '@angular/core/src/render3/interfaces/view';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule,JsonpModule } from '@angular/http';
-import {HttpClientModule} from '@angular/common/http';
-import { CommonModule } from '@angular/common';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
-import { LoginServiceService } from './login-service.service';
+import { LoginServiceService } from './login/login-service.service';
 import { AuthGuard } from './login/login.guard';
 
 @NgModule({
@@ -44,7 +40,6 @@ import { AuthGuard } from './login/login.guard';
     LoginComponent
   ],
   imports: [
-    CommonModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -57,7 +52,6 @@ import { AuthGuard } from './login/login.guard';
     FormsModule,
     HttpModule,
     HttpClientModule,
-    JsonpModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routesapp)
 ],

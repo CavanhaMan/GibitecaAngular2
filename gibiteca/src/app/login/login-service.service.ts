@@ -1,19 +1,20 @@
-import { Injectable,EventEmitter } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from './user';
 
 @Injectable()
+
 export class LoginServiceService {
 
   public showNavbarEmmitter: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   private authenticated = false;
 
-  constructor(private router: Router){}
+  constructor(private router: Router) { }
 
-  signIn(user:User){
+  signIn(user: User){
     if((user.email === 'user@email.com' || user.email === 'usuario@email.com') && user.password === '123456'){
-      this.authenticated === true;
+      this.authenticated = true;
       this.showNavBar(true);
       this.router.navigate(['/']);
     }
