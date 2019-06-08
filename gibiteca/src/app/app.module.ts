@@ -25,6 +25,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule,JsonpModule } from '@angular/http';
 import {HttpClientModule} from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { CommonModule } from '@angular/common';
     CategoriaComponent,
     ClienteComponent,
     EditoraComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,
