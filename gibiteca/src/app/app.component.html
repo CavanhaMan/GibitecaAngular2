@@ -7,18 +7,19 @@
         </button>
         <span><a routerLink="/" mat-button><img class="logo" src="assets/img/barbagb.png" alt="CavanhaMan" width="120"></a></span>
         <span class="example-spacer"></span>
-        <div fxShow="true" fxHide.lt-md="true"><!-- Menu expandido -->
+        <div fxShow="true" fxHide.lt-md="true" *ngIf="showNavBar"><!-- Menu expandido -->
           <a routerLink="/gibi" mat-button><mat-icon>import_contacts</mat-icon>Gibi</a>
           <a routerLink="/editora" mat-button><mat-icon>store</mat-icon>Editora</a>
           <a routerLink="/categoria" mat-button><mat-icon>group_work</mat-icon>Categoria</a>
           <a routerLink="/cliente" mat-button><mat-icon>person</mat-icon>Cliente</a>
-          <a routerLink="/usuario" mat-button><mat-icon>person</mat-icon>Usuário</a>
-          <a routerLink="signin" class="nav-link" *ngIf="!isAuth()">Login</a>
-          <a class="nav-link" (click)="onLogout()" *ngIf="isAuth()">Logout</a>
-          <!-- <div class="nav-iten active" *ngIf="!isAuth()">
-            <a class="nav-link" routerLink="signin">Login</a>
-          </div>
+          <a class="nav-link" (click)="onLogout()" mat-button><mat-icon>highlight_off</mat-icon>Logout</a>
+        </div>
+        <div>
+          <!-- <a routerLink="signin" class="nav-link" *ngIf="!isAuth()" mat-button><mat-icon>fingerprint</mat-icon>Login</a> -->
           <div class="nav-iten active" *ngIf="!isAuth()">
+            <a routerLink="signin" class="nav-link" mat-button class="menuzao"><mat-icon>fingerprint</mat-icon>Login</a>
+          </div>
+          <!-- <div class="nav-iten active" *ngIf="isAuth()">
             <a class="nav-link" (click)="onLogout()">Logout</a>
           </div> -->
         </div>
