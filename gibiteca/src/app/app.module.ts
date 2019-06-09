@@ -20,6 +20,7 @@ import { CategoriaComponent } from './categoria/categoria.component';
 import { ClienteComponent } from './cliente/cliente.component';
 import { EditoraComponent } from './editora/editora.component';
 import { HomeComponent } from './home/home.component';
+import { UsuarioComponent } from './usuario/usuario.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -37,6 +38,7 @@ import { AuthGuard } from './login/login.guard';
     ClienteComponent,
     EditoraComponent,
     HomeComponent,
+    UsuarioComponent,
     LoginComponent
   ],
   imports: [

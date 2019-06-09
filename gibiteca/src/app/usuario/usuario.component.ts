@@ -80,7 +80,7 @@ export class UsuarioComponent implements OnInit {
   excluir() {
     if (this.usuario.codigo == null) {alert('Selecione algum usuario');}
     else {
-      if (confirm('Você realmente quer excluir o usuario '+this.usuario.nome+'?')) {
+      if (confirm('Você realmente quer excluir o usuario '+this.usuario.login+'?')) {
         this.usuarioService.remove(this.usuario.codigo)
         .subscribe(
           data => alert('Usuario removido '+data),
