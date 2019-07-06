@@ -15,7 +15,8 @@ export const routesapp : Routes = [
   { path: 'gibi', component: GibiComponent},
   { path: 'cliente', component: ClienteComponent},
 
-  { path: 'cliente', loadChildren: 'app/cliente/clientes.module#ClientesModule',canActivate:[AuthGuard] },
+  { path: 'cliente', loadChildren: './cliente/clientes.module#ClientesModule',canActivate:[AuthGuard] },
+  { path: 'cliente', loadChildren: './cliente/clientes.module#ClientesModule',canActivate:[AuthGuard] },
   { path: 'signin', component: LoginComponent },
   
   { path: './home/home.component.html', component: HomeComponent},
