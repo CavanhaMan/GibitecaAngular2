@@ -4,6 +4,14 @@ const app = express();
 
 app.set("json spaces",4);
 
+const index = require('./routes/index');
+const clientes = require('./routes/clientes');
+
+app.use('/',index);
+app.use('/clientes',clientes);
+
+app.listen(PORT, () => console.log("escutando na porta "+PORT));
+
 // app.get("/", (req,res) => res.json({status: "Nodejs backend"}));
 
 // app.get("/clientes", (req,res) => {
@@ -13,11 +21,3 @@ app.set("json spaces",4);
 //             ]
 //     )
 // });
-
-const index = require('./routes/index');
-const clientes = require('./routes/clientes');
-
-app.use('/',index);
-app.use('/cliente',clientes);
-
-app.listen(PORT, () => console.log("escutando na porta "+PORT));
