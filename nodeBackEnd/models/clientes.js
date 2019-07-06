@@ -9,7 +9,7 @@ const Cliente = db.define('cliente',{
     },
     nome: {
         type: Sequelize.STRING,
-        allowNull: false;
+        allowNull: false
     },
 })
 
