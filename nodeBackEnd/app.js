@@ -6,6 +6,8 @@ const app = express();
 
 app.get("/", (req,res) => res.json({status: "Nodejs backend"}));
 
+app.set("json spaces",4);
+
 app.get("/clientes", (req,res) => {
     res.json([
                 {'codigo':1,'nome':'Cavanha'},
