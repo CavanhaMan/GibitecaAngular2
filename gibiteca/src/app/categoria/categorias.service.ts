@@ -10,7 +10,7 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable({providedIn: 'root'})
   export class CategoriasService{
-    private url: string = 'http://localhost:9000/categorias';
+    private url: string = 'http://localhost:3000/categorias';
 
     categoriasChanged = new EventEmitter<Observable<Categoria[]>>();
 

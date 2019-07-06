@@ -9,7 +9,7 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable({providedIn: 'root'})
   export class UsuariosService{
-    private url: string = 'http://localhost:9000/usuarios';
+    private url: string = 'http://localhost:3000/usuarios';
 
     usuariosChanged = new EventEmitter<Observable<Usuario[]>>();
 

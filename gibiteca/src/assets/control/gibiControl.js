@@ -1,7 +1,7 @@
 var app = angular.module('todoApp', [])
 .controller('GibiController', function($scope,$http) {
   
-  var url = 'http://localhost:9000/gibis';
+  var url = 'http://localhost:3000/gibis';
   
   /*$scope.nomeTela = "Cadastro de Gibi";*/
 

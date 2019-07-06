@@ -10,7 +10,7 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable({providedIn: 'root'})
   export class EditorasService{
-    private url: string = 'http://localhost:9000/editoras';
+    private url: string = 'http://localhost:3000/editoras';
 
     editorasChanged = new EventEmitter<Observable<Editora[]>>();
     

@@ -1,7 +1,7 @@
 var app = angular.module('todoApp', [])
 .controller('CategoriaController', function($scope,$http) {
   
-  var url = 'http://localhost:9000/categorias';
+  var url = 'http://localhost:3000/categorias';
   
   $scope.nomeTela = "Cadastro de Categorias";
 

@@ -1,7 +1,7 @@
 var app = angular.module('todoApp', [])
 .controller('EditoraController', function($scope,$http) {
   
-  var url = 'http://localhost:9000/editoras';
+  var url = 'http://localhost:3000/editoras';
   
   $scope.nomeTela = "Cadastro de Editoras";
 

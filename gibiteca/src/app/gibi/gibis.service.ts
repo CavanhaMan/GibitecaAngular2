@@ -10,7 +10,7 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable({providedIn: 'root'})
   export class GibisService{
-    private url: string = 'http://localhost:9000/gibis';
+    private url: string = 'http://localhost:3000/gibis';
 
     gibisChanged = new EventEmitter<Observable<Gibi[]>>();
 
