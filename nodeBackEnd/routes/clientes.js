@@ -21,4 +21,16 @@ router.get('/:id',(req,res) => {
     });
 })
 
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
+
+router.get('/search/params',(req,res) => {
+    var query = `%${req.query.neme}%`;
+
+    console.log(query)
+    Cliente.findAll({where: {nome:{[Op.like]:query}}})
+        .then(clientes => res.json(clientes))
+        .catch(err => console.log(err));
+});
+
 module.exports = router;
