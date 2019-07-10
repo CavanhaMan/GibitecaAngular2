@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const db = require('../config/database');
 
-const Cliente = db.define('cliente',{
+const Categoria = db.define('categoria',{
     codigo: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -13,4 +13,4 @@ const Cliente = db.define('cliente',{
     },
 })
 
-module.exports = Cliente;
+module.exports = Categoria;

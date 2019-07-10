@@ -1,9 +1,9 @@
 const express = require('express');
-const Cliente = require('../models/clientes');
+const Gibi = require('../models/gibis');
 const router = express.Router();
 
 router.get("/",(req,res) => 
-    Cliente.findAll()
+    Gibi.findAll()
         .then(result => res.json(result))
         .catch(error => {
             res.status(412).json({msg: error.message});
@@ -11,7 +11,7 @@ router.get("/",(req,res) =>
     );
 
 router.get('/:id',(req,res) => {
-    Cliente.findOne({
+    Gibi.findOne({
         where: {codigo: req.params.id,}
     }).then(result => {
         if(result) res.json(result);
@@ -28,13 +28,13 @@ router.get('/search/params',(req,res) => {
     var query = `%${req.query.neme}%`;
 
     console.log(query)
-    Cliente.findAll({where: {nome:{[Op.like]:query}}})
-        .then(clientes => res.json(clientes))
+    Gibi.findAll({where: {nome:{[Op.like]:query}}})
+        .then(gibis => res.json(gibis))
         .catch(err => console.log(err));
 });
 
 router.delete("/:id", (req,res) => {
-    Cliente.destroy({
+    Gibi.destroy({
         where: {codigo: req.params.id}
     })
     .then(result => res.sendStatus(204))
@@ -45,7 +45,7 @@ router.delete("/:id", (req,res) => {
 
 router.post('/',(req,res) => {
     console.log(req.body);
-    Cliente.create(req.body)
+    Gibi.create(req.body)
         .then(result => res.json(result))
         .catch(error => {
             res.status(412).json({msg:error.message});
@@ -53,7 +53,7 @@ router.post('/',(req,res) => {
 });
 
 router.put('/',(req,res) => {
-    Cliente.update(req.body, {
+    Gibi.update(req.body, {
         where: {codigo: req.body.codigo}
     })
     .then(result => res.sendStatus(204))
